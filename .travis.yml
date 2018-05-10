@@ -11,18 +11,9 @@ env:
     - RAVEN_PROTOCOL=https URL=https://localhost:8433
   matrix:
     - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180427-0400-linux-x64.tar.bz2
+    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180428-0400-linux-x64.tar.bz2
+    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180428-1055-linux-x64.tar.bz2
     - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180429-0400-linux-x64.tar.bz2
-    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180430-0400-linux-x64.tar.bz2
-    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180501-0400-linux-x64.tar.bz2
-    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180502-0400-linux-x64.tar.bz2
-    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180503-0400-linux-x64.tar.bz2
-    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180504-0400-linux-x64.tar.bz2
-    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180505-0400-linux-x64.tar.bz2
-    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180506-0400-linux-x64.tar.bz2
-    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180507-0400-linux-x64.tar.bz2
-    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180508-0400-linux-x64.tar.bz2
-    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180509-0400-linux-x64.tar.bz2
-    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.4-nightly-20180510-0400-linux-x64.tar.bz2
 script:
   - bundle exec rake
 before_install:
