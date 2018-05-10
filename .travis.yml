@@ -8,9 +8,12 @@ env:
   global:
     - CERTIFICATE=./certs/ruby.pem
     - PASSPHRASE=client11
-  matrix:
-    - RAVEN_PROTOCOL=http
     - RAVEN_PROTOCOL=https URL=https://localhost:8433
+  matrix:
+    - DOWNLOAD_URL=https://daily-builds.s3.amazonaws.com/RavenDB-4.0.3-nightly-20180420-0917
+    - DOWNLOAD_URL=https://s3.amazonaws.com/daily-builds/RavenDB-4.0.3-patch-40031-linux-x64.tar.bz2
+    - DOWNLOAD_URL=https://s3.amazonaws.com/daily-builds/RavenDB-4.0.3-patch-40033-linux-x64.tar.bz2
+    - DOWNLOAD_URL=https://s3.amazonaws.com/daily-builds/RavenDB-4.0.3-patch-40034-linux-x64.tar.bz2
 script:
   - bundle exec rake
 before_install:
@@ -27,7 +30,7 @@ before_install:
   - sudo cp ca.crt /usr/local/share/ca-certificates/ca.crt
   - sudo update-ca-certificates
   - cd ..  
-  - wget -O RavenDB.tar.bz2 https://hibernatingrhinos.com/downloads/RavenDB%20for%20Linux%20x64/latest
+  - wget -O RavenDB.tar.bz2 "$DOWNLOAD_URL"
   - tar xvjf RavenDB.tar.bz2
   - cp ./spec/fixtures/cert/test_settings_$RAVEN_PROTOCOL.json ./RavenDB/Server/settings.json
   - export RAVEN_PFX=$PWD/certs/server.pfx
